@@ -1,8 +1,5 @@
 using UnityEngine;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using LuaInterface;
 
 namespace LuaFramework {
     public class NetworkManager : Manager {

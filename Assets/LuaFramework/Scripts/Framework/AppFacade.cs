@@ -3,36 +3,38 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class AppFacade : Facade
-{
-    private static AppFacade _instance;
-
-    public AppFacade() : base()
+namespace LuaFramework {
+    public class AppFacade : Facade
     {
-    }
+        private static AppFacade _instance;
 
-    public static AppFacade Instance
-    {
-        get{
-            if (_instance == null) {
-                _instance = new AppFacade();
-            }
-            return _instance;
+        public AppFacade() : base()
+        {
         }
-    }
 
-    override protected void InitFramework()
-    {
-        base.InitFramework();
-        RegisterCommand(NotiConst.START_UP, typeof(StartUpCommand));
-    }
+        public static AppFacade Instance
+        {
+            get{
+                if (_instance == null) {
+                    _instance = new AppFacade();
+                }
+                return _instance;
+            }
+        }
 
-    /// <summary>
-    /// 启动框架
-    /// </summary>
-    public void StartUp() {
-        SendMessageCommand(NotiConst.START_UP);
-        RemoveMultiCommand(NotiConst.START_UP);
+        override protected void InitFramework()
+        {
+            base.InitFramework();
+            RegisterCommand(NotiConst.START_UP, typeof(StartUpCommand));
+        }
+
+        /// <summary>
+        /// 启动框架
+        /// </summary>
+        public void StartUp() {
+            SendMessageCommand(NotiConst.START_UP);
+            RemoveMultiCommand(NotiConst.START_UP);
+        }
     }
 }
 

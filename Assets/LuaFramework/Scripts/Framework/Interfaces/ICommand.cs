@@ -3,7 +3,8 @@
 */
 using System;
 
-public interface ICommand {
-	void Execute(IMessage message);
+namespace LuaFramework {
+	public interface ICommand {
+		void Execute(IMessage message);
+	}
 }
-

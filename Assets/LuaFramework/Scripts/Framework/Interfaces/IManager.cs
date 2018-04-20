@@ -5,5 +5,7 @@
 using UnityEngine;
 using System.Collections;
 
-public interface IManager {
+namespace LuaFramework {
+    public interface IManager {
+    }
 }
